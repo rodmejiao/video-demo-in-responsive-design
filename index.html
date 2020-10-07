@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Interno</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        main {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .video-html {
+            width: 100%;
+        }
+
+        span {
+            font-size: 3rem;
+        }
+
+        .iframe-video-container{
+            width: 100%;
+            padding-top: 56.25%;
+            background-color: hotpink;
+            position: relative;
+        }
+        .iframe-video{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+
+        }
+
+        p{
+            font-size: 1.4rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <main>
+        <span>Video incluido en proyecto</span>
+        <video class="video-html" controls poster="./video/poster.jpg">
+            <source src="./video/videoDemo.mp4" type="video/mp4">
+            Your browser doesn't support HTML5 video tag.
+        </video>
+
+        <span>Video con tiempo de inicio establecido (preload none)</span>
+        <video class="video-html" controls preload="none" poster="./video/poster.jpg">
+            <source src="./video/videoDemo.mp4#t=8,10" type="video/mp4">
+            Your browser doesn't support HTML5 video tag.
+        </video>
+
+        <span>Video externo referenciado</span>
+        <video class="video-html" controls 
+            poster="https://upload.wikimedia.org/wikipedia/commons/e/e8/Elephants_Dream_s5_both.jpg">
+            <source src="https://archive.org/download/ElephantsDream/ed_1024_512kb.mp4" type="video/mp4">
+            <source src="https://archive.org/download/ElephantsDream/ed_hd.ogv" type="video/ogg">
+            <source src="https://archive.org/download/ElephantsDream/ed_hd.avi" type="video/avi">
+            Your browser doesn't support HTML5 video tag.
+        </video>
+
+        <span>Video externo iframe</span>
+        <p>formula responsive(h*100/w)
+            El resultado de la formula se aplica como padding top al contenedor donde está el iframe,
+            con esto el video tendrá el aspecto responsive necesario.
+        </p>
+        <div class="iframe-video-container">
+            <iframe class="video-html iframe-video"  src="https://www.youtube.com/embed/EE4_NzKINcg" frameborder="0" ></iframe>
+
+        </div>
+    </main>
+</body>
+
+</html>
